@@ -7,7 +7,8 @@
 # output: "validation_results_DATE.csv", all valid links are downloaded to /data
 
 # read the source list of links and account numbers
-list_source_raw <- read_excel('data/external/List of financial workbook box links_v2.xlsx')
+# **moved to 'parameters' section of 0. Run all scripts**
+# list_source_raw <- read_excel('data/external/List of financial workbook box links_v2.xlsx')
 
 list_source <- list_source_raw %>%
   select(`RC Account Number`, `Account Name`, `Direct Link`)  %>% # TODO `Direct Link` may not be final name

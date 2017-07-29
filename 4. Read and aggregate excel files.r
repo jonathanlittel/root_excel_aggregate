@@ -39,7 +39,7 @@ setwd('data/wbs')
 
 # add id column that's the RC Opp Number for each item in list
   for ( i in 1:length(data_list2) ) {
-    id <- data_list2[[i]][60,2]                             # RC Opp number
+    id <- data_list2[[i]][34,2]                             # RC Opp number
     data_list2[[i]]$opp_number <- paste0(id)
     data_list2[[i]]$file_name <- filenames_list_validated[i]
   }
@@ -50,6 +50,11 @@ setwd('data/wbs')
     appended_data <- rbind(appended_data, data_list2[[i]])  
     # TODO more efficient to start this with defined object size rather than expansion
   }
+
+  
+  # ---------------------------------------------------------
+  # ---  read pricing tab -----------------------------------
+  # ---------------------------------------------------------
   
   data_pricing_list <- lapply(filenames_list_validated,
                               function(x) read_excel(x, sheet = 'export_data_pricing')
@@ -62,7 +67,7 @@ setwd('data/wbs')
   # add id column that's the RC Opp Number for each item in list
   for ( i in 1:length(data_pricing_list2) ) {
     id <- data_pricing_list2[[i]][3,2]                             # RC Opp number
-    data_pricing_list2[[i]]$opp_number <- paste0(id)
+    # data_pricing_list2[[i]]$opp_number <- paste0(id)             # don't need opp number for this one
     data_pricing_list2[[i]]$file_name <- filenames_list_validated[i]
   }
   

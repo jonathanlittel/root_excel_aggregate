@@ -9,6 +9,7 @@ library(tidyverse)
 # optional: use the Box api to log in and authenticate a box id
 # # need to use this if the box file permission isn't set to
 # # 'users with link can download file'
+## install.packages('boxr')
 # library(boxr)
-# box_auth()     # this will produce a prompt for the box api user and secret
+# box_auth()     # this will produce a prompt for the box api client id and secret
 #                # it only needs to be done once (not once per session), and stored in the .renvir file
